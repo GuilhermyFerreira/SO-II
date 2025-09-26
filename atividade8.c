@@ -29,7 +29,6 @@ int BURST_IDLE_MS = 100;
 int HIGH_WM = -1;
 int LOW_WM = -1;
 
-/* --- produtor --- */
 void *producer(void *arg) {
     (void)arg;
     while (1) {
@@ -56,7 +55,6 @@ void *producer(void *arg) {
     return NULL;
 }
 
-/* --- consumidor --- */
 void *consumer(void *arg) {
     (void)arg;
     while (1) {
@@ -76,7 +74,6 @@ void *consumer(void *arg) {
     return NULL;
 }
 
-/* --- main --- */
 int main(int argc, char **argv) {
     if (argc < 3) {
         fprintf(stderr, "Uso: %s BUFFER TOTAL_ITEMS [BURST_SIZE] [BURST_IDLE_MS] [HIGH_WM] [LOW_WM]\n", argv[0]);
